@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Digital City</title>
+		<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'> <!-- fuente de letra Lato-->
+		<link rel="stylesheet" href="../prueba/estilo.css"/>
+	</head>
+	<body>
+
+		<nav class="menu">
+			<section class="menu-container">			
+				<h1 class="menu_logo">Digital City</h1>
+
+				<ul class="menu_links">
+
+					<li class="menu_item">
+						<a href="#" class="menu_link">Home</a>
+					</li>
+					
+					<li class="menu_item menu_item--show">
+							<a href="#" class="menu_link">About <img src="menu/iconos/arrow.svg" class="menu_arrow"></a>
+
+							<ul class="menu_nesting">
+								<li class="menu_inside">
+									<a href="#" class="menu_link menu_link---inside">About 1</a>
+								</li>
+								<li class="menu_inside">
+									<a href="#" class="menu_link menu_link---inside">About 2</a>
+								</li>
+								<li class="menu_inside">
+									<a href="#" class="menu_link menu_link---inside">About 3</a>
+								</li>
+							</ul>
+					</li>
+
+					<li class="menu_item menu_item--show">
+							<a href="#" class="menu_link">Project <img src="menu/iconos/arrow.svg" class="menu_arrow"></a>
+
+							<ul class="menu_nesting">
+								<li class="menu_inside">
+									<a href="#" class="menu_link menu_link---inside">Project 1</a>
+								</li>
+								<li class="menu_inside">
+									<a href="#" class="menu_link menu_link---inside">Project 2</a>
+								</li>
+								<li class="menu_inside">
+									<a href="#" class="menu_link menu_link---inside">Project 3</a>
+								</li>
+							</ul>
+						<li/>
+
+						<li class="menu_item menu_item--show">
+							<a href="#" class="menu_link">Contac</a>
+						</li>
+				</ul>
+
+				<!--
+					<a href="#"><img src="../prueba/Imgenes/correo-electronico.png" class="redes-sociales" alt="correo-electronico"/></a>
+					<a href="#"><img src="../prueba/Imgenes/facebook.png" class="redes-sociales" alt="facebook"/></a>
+					<a href="#"><img src="../prueba/Imgenes/instagram.png" class="redes-sociales" alt="instagram"/></a>
+					<a href="#"><img src="../prueba/Imgenes/whatsapp.png" class="redes-sociales" alt="WhatsApp"/></a>
+				-->
+
+				<div class="menu_hamburguer">
+					<img src="menu/iconos/menu.svg" alt="menu" class="menu_img">
+				</div>
+			</section>
+    </nav>
+
+		<header>
+			<h1>Laptop Gamer</h1>
+			<div class="container-icon">
+				<div class="container-cart-icon">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke-width="1.5"
+						stroke="currentColor"
+						class="icon-cart"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+						/>
+					</svg>
+					<div class="count-products">
+						<span id="contador-productos">0</span>
+					</div>
+				</div>
+
+				<div class="container-cart-products hidden-cart">
+					<div class="row-product hidden">
+						<div class="cart-product">
+							<div class="info-cart-product">
+								<span class="cantidad-producto-carrito">1</span>
+								<p class="titulo-producto-carrito">Zapatos Nike</p>
+								<span class="precio-producto-carrito">$80</span>
+							</div>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke="currentColor"
+								class="icon-close"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M6 18L18 6M6 6l12 12"
+								/>
+							</svg>
+						</div>
+					</div>
+
+					<div class="cart-total hidden">
+						<h3>Total:</h3>
+						<span class="total-pagar">$200</span>
+					</div>
+					<p class="cart-empty">El carrito está vacío</p>
+					<div>
+						<button>PAGAR</button>
+					</div>
+				</div>
+			</div>
+		</header>
+				<!--Productos----------------->
+				<section class="caja1">
+					<aside class="clasificaciones">
+						<a href="indices/Categoria-Smartphones.html">Smartphone</a>
+						<a href="#">Laptop Gamer</a>
+						<a href="#">Teclados</a>
+						<a href="#">Mouse</a> 
+						<a href="#">Monitores</a> 
+						<a href="#">Bocinas</a>
+					</aside>
+
+					<div class="container-items">
+						<!--1-->
+						<div class="item">
+							<figure>
+								<img src=https://images.unsplash.com/photo-1640955014216-75201056c829?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80 alt="latop gamer"/>
+							</figure>
+							<div class="info-producto">
+								<h3>LAPTOP MARCA W</h3>
+								<h4 class="price">$895</h4>
+								<button class="btn-add-cart">Anadir al carrito</button>
+							</div>
+							<hr/>
+						</div>
+				
+						<div class="item">
+							<figure>
+								<img src="https://images.unsplash.com/photo-1565906624603-eae91627707b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1031&q=80" alt="laptop gamer"/>
+							</figure>
+							<div class="info-producto">
+								<h3>LAPTOP MARCA X</h3>
+								<h4 class="price">$1050</h4>
+								<button class="btn-add-cart">Anadir al carrito</button>
+							</div>
+							<hr/>
+						</div>
+				
+						<div class="item">
+							<figure>
+								<img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80" alt="laptop gamer"/>
+							</figure>
+							<div class="info-producto">
+								<h3>LAPTOP MARCA Y</h3>
+								<h4 class="price">$1563</h4>
+								<button class="btn-add-cart">Anadir al carrito</button>
+							</div>
+							<hr/>
+						</div>
+				
+						<div class="item">
+							<figure>
+								<img src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80" alt="laptop gamer"/>
+							</figure>
+							<div class="info-producto">
+								<h3>LAPTOP MARCA Z</h3>
+								<h4 class="price">$1999</h4>
+								<button class="btn-add-cart">Anadir al carrito</button>
+							</div>
+							<hr/>
+						</div>
+
+						<!--2-->
+
+						<div class="item">
+							<figure>
+								<img src="https://images.unsplash.com/photo-1640955014216-75201056c829?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80" alt="latop gamer"/>
+							</figure>
+							<div class="info-producto">
+								<h3>LAPTOP MARCA Q</h3>
+								<h4 class="price">$895</h4>
+								<button class="btn-add-cart">Anadir al carrito</button>
+							</div>
+							<hr/>
+						</div>
+				
+						<div class="item">
+							<figure>
+								<img src="https://images.unsplash.com/photo-1565906624603-eae91627707b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1031&q=80" alt="laptop gamer"/>
+							</figure>
+							<div class="info-producto">
+								<h3>LAPTOP MARCA A</h3>
+								<h4 class="price">$1050</h4>
+								<button class="btn-add-cart">Anadir al carrito</button>
+							</div>
+							<hr/>
+						</div>
+				
+						<div class="item">
+							<figure>
+								<img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80" alt="laptop gamer"/>
+							</figure>
+							<div class="info-producto">
+								<h3>LAPTOP MARCA S</h3>
+								<h4 class="price">$1563</h4>
+								<button class="btn-add-cart">Anadir al carrito</button>
+							</div>
+							<hr/>
+						</div>
+				
+						<div class="item">
+							<figure>
+								<img src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80" alt="laptop gamer"/>
+							</figure>
+							<div class="info-producto">
+								<h3>LAPTOP MARCA L</h3>
+								<h4 class="price">$1999</h4>
+								<button class="btn-add-cart">Anadir al carrito</button>
+							</div>
+							<hr/>
+						</div>
+					</div>
+				</section>
+		
+		<script src="../prueba/index.js"></script>
+	</body>
+	<footer>
+		<h3>Digital City</h3>
+	</footer>
