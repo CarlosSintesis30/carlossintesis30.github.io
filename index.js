@@ -67,7 +67,7 @@ const cartInfo = document.querySelector('.cart-product'); /*obtiene la informaci
 const rowProduct = document.querySelector('.row-product');
 
 // Lista de todos los contenedores de productos
-const productsList = document.querySelector('.container-items');
+const productsList = document.querySelectorAll('.container-items');
 
 // Variable de arreglos de Productos
 let allProducts = [];
@@ -86,37 +86,40 @@ const loadLocalStorage = () => {
     }
 };
 
-productsList.addEventListener('click', e => {
-	if (e.target.classList.contains('btn-add-cart')) {
-		const product = e.target.parentElement;
+for(let i = 0; i < productsList.length; i++){
 
-		const infoProduct = {
-			quantity: 1,
-			title: product.querySelector('h3').textContent,
-			price: product.querySelector('h4').textContent,
-		};
-
-		const exits = allProducts.some(
-			product => product.title === infoProduct.title
-		); //recorre, y verifica si los nombres son iguales,develve valor logico
-
-		if (exits) {
-			const products = allProducts.map(product => {
-				if (product.title === infoProduct.title) {
-					product.quantity++; //si se cumple,aumenta el valor en uno
-					return product;
-				} else {
-					return product;
-				}
-			});
-			allProducts = [...products]; /*devuelv el arreglo esparcido*/
-		} else {
-			allProducts = [...allProducts, infoProduct];
-		}
-        saveLocalStorage();
-		showHTML();
-	}
-});
+  productsList[i].addEventListener('click', e => {
+    if (e.target.classList.contains('btn-add-cart')) {
+      const product = e.target.parentElement;
+  
+      const infoProduct = {
+        quantity: 1,
+        title: product.querySelector('h3').textContent,
+        price: product.querySelector('h4').textContent,
+      };
+  
+      const exits = allProducts.some(
+        product => product.title === infoProduct.title
+      ); //recorre, y verifica si los nombres son iguales,develve valor logico
+  
+      if (exits) {
+        const products = allProducts.map(product => {
+          if (product.title === infoProduct.title) {
+            product.quantity++; //si se cumple,aumenta el valor en uno
+            return product;
+          } else {
+            return product;
+          }
+        });
+        allProducts = [...products]; /*devuelv el arreglo esparcido*/
+      } else {
+        allProducts = [...allProducts, infoProduct];
+      }
+      saveLocalStorage();
+      showHTML();
+    }
+  });
+}
 
 /*evento del boton eliminar*/
 rowProduct.addEventListener('click', e => {
