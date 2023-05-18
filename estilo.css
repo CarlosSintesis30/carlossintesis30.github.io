@@ -577,7 +577,7 @@ footer{
 }
 
 /* ************************************* */
-@media (max-width:400px){
+@media (min-width:400px) and (max-width:500px) {
     .menu{
         top: 0;
         left: 0;
@@ -643,7 +643,7 @@ footer{
         max-width: 100%;
         margin: 15px auto 0 auto;
         display: grid;
-        grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
+        grid-template-columns: repeat(auto-fit,minmax(120px,1fr));
         grid-gap: 30px;
         grid-row-gap: 30px;
     }
@@ -670,6 +670,9 @@ footer{
         padding: 5px 15px;
         line-height: 1;
     }
-   
+    .titulo-container-item{
+        font-size: 13px;
+    }
+
  }
 
