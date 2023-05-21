@@ -209,20 +209,32 @@ header{
     justify-content: space-between;
     flex: 0.8;
 }
+.info-cart-product img{
+    margin: 2px;
+    width: auto;
+    height: auto;
+    max-width: 80px;
+}
 
 .titulo-producto-carrito{
-    font-size: 20px;
+    font-size: 18px;
+    text-align: justify;
+    margin: 0 5px;
+    border-right: 1px solid #000;
+    padding-right: 5px;
 }
 
 .precio-producto-carrito{
     font-weight: 700;
     font-size: 20px;
-    margin-left: 10px;
+    
 }
 
 .cantidad-producto-carrito{
-    font-weight: 400;
+    font-weight: 550;
     font-size: 20px;
+    border-right: 1px solid #000;
+    padding-right: 5px;
 }
 
 .icon-close{
@@ -456,6 +468,50 @@ footer{
 .info-producto H3{
     font-size:15px
 }
+/* *******nitificacion******* */
+.notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 999;
+  }
+  
+  .notification.show {
+    opacity: 1;
+  }
+  
+  .notification.animate {
+    animation: notificationAnimation 0.3s ease-in-out;
+  }
+  
+  @keyframes notificationAnimation {
+    0% {
+      transform: translate(-50%, -50%) scale(0.8);
+      opacity: 0;
+    }
+    70% {
+      transform: translate(-50%, -50%) scale(1.05);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+  }
+  
+  
+.show {
+    display: block;
+  }
+  
 
 /* ************************************************************** */
 /*cuando pase a tamaño de disposito movil*/
@@ -551,33 +607,94 @@ footer{
         margin: 5px auto 0 auto;
     }
 
-    .slider{
-        max-width: 100%;
-        margin:10px auto 0 auto;
-    }
-    .new-products {
-       max-width: 100%;
-       max-height: auto;
-       display: flex;
-        margin:10px auto 0 auto;
-        justify-content: space-between;
+    .slider {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        max-width: 800px;
+        height: auto;
+        margin: 0 auto;
       }
       
-      .new-products img {
-        max-width: 31%;
+      .slider-container {
+        display: flex;
+        width: 200%;
+        transition: transform 0.5s ease;
+      }
+      
+      .slider-container img {
+        width: 50%;
         height: auto;
-        margin: 10px;
-      } 
+        object-fit: cover;
+      }
+      
+      .slider-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 40px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      
+      .slider-button-prev {
+        left: 0;
+      }
+      
+      .slider-button-next {
+        right: 0;
+      }
+    
+      .new-products {
+        max-width: 100%;
+        max-height: auto;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        margin: 10px auto;
+        overflow-x: auto;
+      }
+    
+      .new-products img {
+        width: 33.33%;
+        height: auto;
+        margin: 0;
+      }
      
       .titulo-container-item{
         font-size: 18px;
         background-color: #ffffff;
       }
-      
+      .container-items{
+        max-width: 100%;
+        margin: 10px auto 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(120px,1fr));
+        grid-gap: 30px;
+        grid-row-gap: 30px;
+    }
+    .info-producto button{
+        padding: 6px 10px;
+        font-size: 10px;
+    }
+    .price{
+        font-size: 12px;
+    }
+    .info-producto{
+        padding: 5px 15px;
+        line-height: 1;
+    }
+    .item h3{
+        font-size: 11px;
+    }
 }
 
 /* ************************************* */
-@media (min-width:400px) and (max-width:500px) {
+@media (min-width:400px) and (max-width:600px) {
     .menu{
         top: 0;
         left: 0;
@@ -591,7 +708,7 @@ footer{
         position: relative;
         overflow: hidden;
         width: 100%;
-        max-width: 400px;
+        max-width: 600px;
         height: auto;
         margin: 0 auto;
       }
@@ -635,9 +752,9 @@ footer{
       }
       
       .new-products img {
-        max-width: 120px;
+        width: 33.33%;
         height: auto;
-       margin:5px;
+        margin-right: 3px;
       }
       .container-items{
         max-width: 100%;
@@ -673,6 +790,9 @@ footer{
     .titulo-container-item{
         font-size: 13px;
     }
-
+    .notification {
+        font-size: 12px;
+        padding: 6px 12px;
+      }
  }
 
