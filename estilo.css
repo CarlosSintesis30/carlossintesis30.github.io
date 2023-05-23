@@ -220,20 +220,19 @@ header{
     font-size: 18px;
     text-align: justify;
     margin: 0 5px;
-    border-right: 1px solid #000;
+    border-right: 1px solid lightgray;
     padding-right: 5px;
 }
 
 .precio-producto-carrito{
     font-weight: 700;
     font-size: 20px;
-    
 }
 
 .cantidad-producto-carrito{
     font-weight: 550;
     font-size: 20px;
-    border-right: 1px solid #000;
+    border-right: 1px solid lightgray;
     padding-right: 5px;
 }
 
@@ -275,10 +274,10 @@ header{
 
 /* Main */
 .container-items{
-    max-width: 80%;
+    max-width: 90%;
     margin: 10px auto 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
     grid-gap: 30px;
     grid-row-gap: 30px;
 }
@@ -312,11 +311,16 @@ header{
 }
 
 .info-producto{
-    padding: 15px 30px;
-    line-height: 2;
+    padding: 12px 20px;
+    line-height: 1.5;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    text-align: justify;
+}
+.info-producto H3{
+    font-size:14px;
+    
 }
 
 .price{
@@ -416,10 +420,10 @@ header{
 .linea{
     border: 1px dotted lightgray;
     max-width: 80%;
-    margin:25px auto 0 auto ;
+    margin:160px auto 0 auto ;
 }
 .caja2{
-    max-width: 80%;
+    max-width: 90%;
     margin: 0 auto 0 auto;
     justify-content: space-around;
 }
@@ -432,11 +436,7 @@ header{
 .new-products img{
     max-width: 32%;
 }
-footer{
-    clear: both; /*rompe los elementos flotados, ya no se aplica a el*/
-    padding: 1px;
-    text-align: center;
-}
+
 .clasificaciones{
     float: left;
     max-width: 16%;
@@ -465,9 +465,6 @@ footer{
     font-weight: bold;
 }
 
-.info-producto H3{
-    font-size:15px
-}
 /* *******nitificacion******* */
 .notification {
     position: fixed;
@@ -512,6 +509,106 @@ footer{
     display: block;
   }
   
+
+  /* ******************footer****************************** */
+  .footer {
+    margin: 50px 0 0 0;
+    background-color: #222;
+    color: #fff;
+    padding: 40px  0 0 0;
+  }
+  
+  .footer-content {
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .footer-section {
+    flex: 1 1 300px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .footer-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-links li {
+    margin-bottom: 5px;
+  }
+  
+  .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    color: #ccc;
+  }
+  
+  .footer-description {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  
+  .footer-form {
+    display: flex;
+  }
+  
+  .footer-form input[type="email"] {
+    width: 100%;
+    padding: 5px;
+  }
+  
+  .footer-form button {
+    background-color: #fff;
+    color: #222;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .footer-bottom {
+    background-color: #111;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+  
+  .footer-text {
+    font-size: 14px;
+    margin: 0;
+  }
+  
+  .footer-social-icons a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-social-icons a:hover {
+    color: #ccc;
+  }
+  
+  
+
+
 
 /* ************************************************************** */
 /*cuando pase a tamaño de disposito movil*/
@@ -664,7 +761,9 @@ footer{
         height: auto;
         margin: 0;
       }
-     
+     .linea{
+        margin:50px auto 0 auto ;
+     }
       .titulo-container-item{
         font-size: 18px;
         background-color: #ffffff;
@@ -692,6 +791,8 @@ footer{
         font-size: 11px;
     }
 }
+
+
 
 /* ************************************* */
 @media (min-width:400px) and (max-width:600px) {
@@ -787,8 +888,8 @@ footer{
         padding: 5px 15px;
         line-height: 1;
     }
-    .titulo-container-item{
-        font-size: 13px;
+    .titulo-container-item h2{
+        font-size: 18px;
     }
     .notification {
         font-size: 12px;
