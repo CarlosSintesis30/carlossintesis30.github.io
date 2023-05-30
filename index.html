@@ -10,12 +10,14 @@
 		<title>Digital City</title>
 		<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'> <!-- fuente de letra Lato-->
 		<link rel="stylesheet" href="./estilo.css"/>
+		<link rel="stylesheet" href="css/animate.css-main/animate.min.css">
 		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 	</head>
 	<body>
 
 		<nav class="menu">
-			<section class="menu-destok">
+			
+			<!-- <section class="menu-destok">
 				<div class="contacto">
 					<ul class="contacto">
 						<li><i class='bx bx-phone' ></i><a href="">+503 2255-0000</a></li>
@@ -32,16 +34,15 @@
 						<li><a href=""><i class='bx bxl-tiktok' ></i></a></i></li>
 					</ul>
 				</div>
-			</section>
-
-
+			</section> -->
+			
 			<section class="menu-container">			
 				<h1 class="menu_logo">Digital City</h1>
 
 				<ul class="menu_links">
 
 					<li class="menu_item">
-						<a href="" class="menu_link">Home</a>
+						<a href="" class="menu_link">Inicio</a>
 					</li>
 					
 					<li class="menu_item menu_item--show">
@@ -95,7 +96,15 @@
     </nav>
 
 		<header>
-			<h1>Digital City</h1>
+			
+
+			<div class="search-container">
+				<input type="text" id="search-input" placeholder="Buscar...">
+				<button id="search-button"><i class="bx bx-search"></i></button>
+				<ul id="search-results"></ul>
+			  </div>
+			  
+
 			<div class="container-icon">
 				<div class="container-cart-icon">
 					<svg
@@ -122,7 +131,11 @@
 						<div class="cart-product">
 							<div class="info-cart-product">
 								<img class="product-image" src="Imgenes/laptop marca w.avif" alt="Imagen del producto">
-								<span class="cantidad-producto-carrito">1</span>
+								<div class="cantidad-carrito">
+									<i class='bx bx-minus-circle restar-cantidad' ></i>
+									<span class="cantidad-producto-carrito">1</span>
+									<i class='bx bx-plus-circle sumar-cantidad'></i>
+								</div>
 								<p class="titulo-producto-carrito">Zapatos Nike</p>
 								<span class="precio-producto-carrito">$80</span>
 							</div>
@@ -146,10 +159,12 @@
 					<div class="cart-total hidden">
 						<h3>Total:</h3>
 						<span class="total-pagar">$200</span>
+						
+						
 					</div>
 					<p class="cart-empty">El carrito está vacío</p>
-					<div>
-						<button>PAGAR</button>
+					<div class="btn-pagar">
+						<a href="pagar.html"> <button>PAGAR</button></a>
 					</div>
 				</div>
 			</div>
@@ -195,13 +210,13 @@
 						<h2 class="titulo-container-item">Nuevos Productos</h2>
 					</div>
 					
-					<div class="container-items">
+					<div class="container-items" id="item-container">
 						<div class="item temp" category="inicio" id="1">
 							<figure>
 								<img class="img-item" src="Imgenes/laptop marca w.avif" alt="latop gamer"/>
 							</figure>
 							<div class="info-producto">
-								<h3>LAPTOP MARCA W</h3>
+								<h3 class="nombre-item">LAPTOP MARCA W</h3>
 								<h4 class="price">$895</h4>
 								<button class="btn-add-cart">Anadir al carrito</button>
 							</div>
@@ -297,7 +312,7 @@
 						<h2 class="titulo-container-item">Nuevos Productos</h2>
 					</div>
 					
-					<div class="container-items">
+					<div class="container-items "  id="item-container">
 						<!--****************************************************
 						*********ELEMENTOS 	QUE SOLO SE MOSTRARAN AL INICIO****
 						******************************************************-->
@@ -399,7 +414,7 @@
 					</div>
 
 
-					<div class="container-items">
+					<div class="container-items" id="item-container">
 
 						<!--****************************************************
 						*********ELEMENTOS 	QUE NO SE MOSTRARAN AL INICIO****
@@ -609,6 +624,7 @@
 				</section>
 	</body>
 	<script src="./index.js"></script>
+	
 
 	<footer class="footer">
 		<div class="footer-content">
@@ -644,7 +660,7 @@
 					</div>
 				</div>
 				<div class="footer-bottom">
-					<p class="footer-text">© 2023 Digital City. Todos los derechos reservados.</p>
+					<p class="footer-text">© 2023 Digital City. Todos los derechos reservados. Atentamente Las monas Chinas</p>
 					<div class="footer-social-icons">
 					<a href="#"><i class="bx bxl-facebook"></i></a>
 					<a href="#"><i class="bx bxl-twitter"></i></a>

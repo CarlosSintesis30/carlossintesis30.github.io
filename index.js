@@ -32,7 +32,7 @@
      /* addClick();*/
 
       window.addEventListener('resize', ()=>{ /*si el ancho de la ventana supera los 800px*/
-          if(window.innerWidth > 800){
+          if(window.innerWidth > 1023){
               deleteStyleHeight();
               if(list.contains('menu_links--show')){ /* si contiene es clase , que la remueva*/
                   list.classList.remove('menu_links--show');
@@ -43,7 +43,7 @@
           }
       });
 
-      if(window.innerWidth <= 800){ /*para evitar errores al hacer mas grande*/
+      if(window.innerWidth <=1023){ /*para evitar errores al hacer mas grande*/
           addClick();
       }
 
@@ -53,17 +53,149 @@
 
 
 /*despues de la barra de navegacion*/
-const btnCart = document.querySelector('.container-cart-icon');
-const containerCartProducts = document.querySelector(
-'.container-cart-products'
-);
 
-btnCart.addEventListener('click', () => {
-containerCartProducts.classList.toggle('hidden-cart');
+/*******buscador *******************************************/
+const searchInput = document.getElementById('search-input');
+const searchButton = document.getElementById('search-button');
+const searchResults = document.getElementById('search-results');
+const linea=document.querySelector('.linea');
+const caja1 = document.querySelector('.caja1');
+const titulo_container_item=document.querySelectorAll('.titulo-container-item');
+
+// Obtener todos los elementos con la clase 'item' 
+const items = Array.from(document.querySelectorAll('.container-items .item')).map(item => {
+  return {
+    name: item.querySelector('h3').textContent.trim().toLowerCase(),
+    element: item
+  };
 });
 
-/* ========================= */
-const cartInfo = document.querySelector('.cart-product'); /*obtiene la informacion del div cart-producto y lo guarda en la variable*/
+searchInput.addEventListener('input', searchItems);
+searchButton.addEventListener('click', searchItems);
+searchInput.addEventListener('keyup', (event) => {
+  if (event.key === 'Enter') {
+    searchItems();
+  }
+});
+
+// Ocultar la lista de resultados al hacer clic fuera de ella
+document.addEventListener('click', (event) => {
+  if (!searchResults.contains(event.target) && event.target !== searchInput) {
+    searchResults.style.display = 'none';
+  }
+});
+
+function searchItems() {
+  const searchTerm = searchInput.value.toLowerCase();
+  const matchingItems = items.filter(item => item.name.includes(searchTerm));
+
+  displayResults(matchingItems);
+}
+
+function displayResults(matchingItems) {
+  searchResults.innerHTML = '';
+  const uniqueItems = [];
+
+  if (matchingItems.length > 0) {
+    matchingItems.forEach(item => {
+      if (!uniqueItems.includes(item.name)) {
+        uniqueItems.push(item.name);
+
+        const listItem = document.createElement('li');
+        listItem.textContent = item.name;
+        listItem.addEventListener('click', () => {
+          searchInput.value = item.name;
+          showSelectedItem(item);
+        });
+        searchResults.appendChild(listItem);
+      }
+    });
+
+    // Agregar animación al mostrar el resultado
+    searchResults.classList.add('animate__animated', 'animate__fadeInDown');
+    searchResults.style.display = 'block';
+  } else {
+    const listItem = document.createElement('li');
+    listItem.textContent = 'No se encontraron resultados.';
+    searchResults.appendChild(listItem);
+    searchResults.style.display = 'block';
+  }
+
+  if (searchInput.value === '') {
+    searchResults.style.display = 'none'; // Oculta la lista de resultados
+    showAllItems();
+  }
+}
+
+function showSelectedItem(item) {
+  const containerItems = document.querySelectorAll('.container-items .item');
+
+  containerItems.forEach(item => {
+    item.classList.add('ocultarItem');
+  });
+
+  item.element.classList.remove('ocultarItem');
+  item.element.classList.remove('ocultar');
+
+  searchResults.innerHTML = '';
+  searchResults.style.display = 'none';
+
+  // Agrega la clase de animación al elemento
+  item.element.classList.add('animate__animated', 'animate__fadeIn', 'selected-item');
+  linea.style.display='none', //oculta la linea divisora
+  caja1.style.display = 'none'; //oculta el slider y las imágenes
+  titulo_container_item.forEach(titulo_container_item => { // oculta los títulos de los contenedores de items
+    titulo_container_item.style.display = 'none';
+  });
+}
+
+function showAllItems() {
+  const containerItems = document.querySelectorAll('.container-items .item');
+
+  containerItems.forEach(item => {
+    item.classList.remove('ocultarItem');
+  });
+
+  // Elimina la clase 'selected-item' de todos los elementos
+  containerItems.forEach(item => {
+    item.classList.remove('selected-item');
+  });
+
+  // Agregar animación al mostrar los elementos
+  containerItems.forEach(item => {
+    item.classList.add('animate__animated', 'animate__fadeIn');
+  });
+
+  caja1.style.display = 'block'; // Mostrar el slider y las imágenes
+  
+  titulo_container_item.forEach(titulo_container_item => { // Mostrar los títulos de los contenedores de items
+    titulo_container_item.style.display = 'block';
+  });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*************despues del buscador*********** */
+
+
+
+const btnCart = document.querySelector('.container-cart-icon');
+const containerCartProducts = document.querySelector('.container-cart-products');
+
+btnCart.addEventListener('click', () => {
+  containerCartProducts.classList.toggle('hidden-cart');
+});
+
+const cartInfo = document.querySelector('.cart-product');
 const rowProduct = document.querySelector('.row-product');
 
 // Lista de todos los contenedores de productos
@@ -73,7 +205,7 @@ const productsList = document.querySelectorAll('.container-items');
 let allProducts = [];
 
 const valorTotal = document.querySelector('.total-pagar');
-
+const btnPagar = document.querySelector('.btn-pagar');
 const countProducts = document.querySelector('#contador-productos');
 
 const cartEmpty = document.querySelector('.cart-empty');
@@ -81,14 +213,14 @@ const cartTotal = document.querySelector('.cart-total');
 
 const loadLocalStorage = () => {
   if (localStorage.getItem('allProducts')) {
-      allProducts = JSON.parse(localStorage.getItem('allProducts'));
-      showHTML();
+    allProducts = JSON.parse(localStorage.getItem('allProducts'));
+    showHTML();
   }
 };
 
 for (let i = 0; i < productsList.length; i++) {
   const notification = document.getElementById('notification');
-  productsList[i].addEventListener('click', e => {
+  productsList[i].addEventListener('click', (e) => {
     if (e.target.classList.contains('btn-add-cart')) {
       const product = e.target.closest('.item');
 
@@ -97,9 +229,10 @@ for (let i = 0; i < productsList.length; i++) {
         quantity: 1,
         title: product.querySelector('h3').textContent,
         price: product.querySelector('h4').textContent,
-        image: product.querySelector('.img-item') ? product.querySelector('.img-item').getAttribute('src') : ''
+        image: product.querySelector('.img-item')
+          ? product.querySelector('.img-item').getAttribute('src')
+          : '',
       };
-
       // Mostrar la notificación
       notification.classList.add('show');
 
@@ -108,10 +241,12 @@ for (let i = 0; i < productsList.length; i++) {
         notification.classList.remove('show');
       }, 2000);
 
-      const exists = allProducts.some(product => product.title === infoProduct.title);
+      const exists = allProducts.some(
+        (product) => product.title === infoProduct.title
+      );
 
       if (exists) {
-        const updatedProducts = allProducts.map(product => {
+        const updatedProducts = allProducts.map((product) => {
           if (product.title === infoProduct.title) {
             product.quantity++;
           }
@@ -128,24 +263,62 @@ for (let i = 0; i < productsList.length; i++) {
   });
 }
 
+/* Evento del botón eliminar */
+rowProduct.addEventListener('click', (e) => {
+  if (e.target.classList.contains('icon-close')) {
+    const product = e.target.parentElement;
+    const title = product.querySelector('p').textContent;
 
-/*evento del boton eliminar*/
-rowProduct.addEventListener('click', e => {
-if (e.target.classList.contains('icon-close')) {
-  const product = e.target.parentElement;
-  const title = product.querySelector('p').textContent;
+    allProducts = allProducts.filter(
+      (product) => product.title !== title
+    );
 
-  allProducts = allProducts.filter(
-    product => product.title !== title
-  );
-
-  console.log(allProducts);
-      saveLocalStorage();
-  showHTML();
-}
+    saveLocalStorage();
+    showHTML();
+  }
 });
 
-// Funcion para mostrar  HTML
+rowProduct.addEventListener('click', (e) => {
+  if (e.target.classList.contains('restar-cantidad')) {
+    const product = e.target.parentElement.parentElement;
+    const title = product.querySelector('p').textContent;
+
+    allProducts = allProducts.map((product) => {
+      if (product.title === title && product.quantity > 1) {
+        product.quantity--;
+      }
+      return product;
+    });
+
+    saveLocalStorage();
+    showHTML();
+  }
+
+  if (e.target.classList.contains('sumar-cantidad')) {
+    const product = e.target.parentElement.parentElement;
+    const title = product.querySelector('p').textContent;
+
+    allProducts = allProducts.map((product) => {
+      if (product.title === title) {
+        product.quantity++;
+      }
+      return product;
+    });
+
+    saveLocalStorage();
+    showHTML();
+  }
+});
+
+const updatePayButtonVisibility = () => {
+  if (allProducts.length === 0) {
+    btnPagar.style.display = 'none';
+  } else {
+    btnPagar.style.display = 'block';
+  }
+};
+
+// Función para mostrar HTML
 const showHTML = () => {
   if (!allProducts.length) {
     cartEmpty.classList.remove('hidden');
@@ -158,18 +331,21 @@ const showHTML = () => {
   }
 
   rowProduct.innerHTML = '';
-
   let total = 0;
   let totalOfProducts = 0;
 
-  allProducts.forEach(product => {
+  allProducts.forEach((product) => {
     const containerProduct = document.createElement('div');
     containerProduct.classList.add('cart-product');
 
     containerProduct.innerHTML = `
       <div class="info-cart-product">
         <img class="product-image" src="${product.image}" alt="Imagen del producto">
-        <span class="cantidad-producto-carrito">${product.quantity}</span>
+        <div class="cantidad-carrito">
+         <i class='bx bx-minus-circle restar-cantidad' ></i>
+          <span class="cantidad-producto-carrito">${product.quantity}</span>
+          <i class='bx bx-plus-circle sumar-cantidad'></i>
+        </div>
         <p class="titulo-producto-carrito">${product.title}</p>
         <span class="precio-producto-carrito">${product.price}</span>
       </div>
@@ -197,8 +373,9 @@ const showHTML = () => {
 
   valorTotal.innerText = `$${total}`;
   countProducts.innerText = totalOfProducts;
-};
 
+  updatePayButtonVisibility();
+};
 
 loadLocalStorage();
 
@@ -206,6 +383,9 @@ loadLocalStorage();
 const saveLocalStorage = () => {
   localStorage.setItem('allProducts', JSON.stringify(allProducts));
 };
+
+
+
 
 
 /* --------------------------filtrar por categorias -------------*/
@@ -229,6 +409,8 @@ item.addEventListener('click', () => {
   items.forEach(item => {
     if (item.getAttribute('category') === category) {
       item.classList.remove('ocultar');
+      item.classList.remove('ocultarItem');
+      item.classList.remove('selected-item');
     } else {
       item.classList.add('ocultar');
     }
@@ -311,3 +493,8 @@ autoSlide = setInterval(() => {
   moveSlide(1);
 }, 3000);
 });
+
+
+
+
+

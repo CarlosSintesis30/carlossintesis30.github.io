@@ -1,0 +1,237 @@
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .payment-container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  h1 {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  label {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 5px;
+  }
+  
+  input, select {
+    width: 250px;
+    height: 30px;
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+
+  
+
+  .product-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid lightgray;
+  }
+  
+  .product-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+  
+  .product-item span {
+    font-size: 14px;
+    margin-right: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .product-item span:nth-child(2) {
+    font-weight: bold;
+  }
+  
+  .product-item span:last-child {
+    color: #e67e22;
+  }
+  
+  
+  .product-item span:last-child:after {
+    content: ' USD';
+  }
+
+  .cart-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cart-total h3 {
+    font-size: 1.2rem;
+    margin-right: 10px;
+  }
+  
+  .cart-total .total-pagar {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff5e00;
+  }
+
+  /* -***********footer************* */
+  .footer {
+    margin: 50px 0 0 0;
+    background-color: #222;
+    color: #fff;
+    padding: 40px  0 0 0;
+  }
+  
+  .footer-content {
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .footer-section {
+    flex: 1 1 300px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .footer-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-links li {
+    margin-bottom: 5px;
+  }
+  
+  .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    color: #ccc;
+  }
+  
+  .footer-description {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  
+  .footer-form {
+    display: flex;
+  }
+  
+  .footer-form input[type="email"] {
+    width: 100%;
+    padding: 5px;
+  }
+  
+  .footer-form button {
+    background-color: #fff;
+    color: #222;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .footer-bottom {
+    background-color: #111;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+  
+  .footer-text {
+    font-size: 14px;
+    margin: 0;
+  }
+  
+  .footer-social-icons a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-social-icons a:hover {
+    color: #ccc;
+  }
+
+
+  /* tamaño para dispositivos moviles */
+  @media (min-width:400px) and (max-width:800px){
+    @media (max-width: 768px) {
+        .product-item {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      
+        .product-item img {
+          margin-right: 0;
+          margin-bottom: 10px;
+        }
+      }
+  }
