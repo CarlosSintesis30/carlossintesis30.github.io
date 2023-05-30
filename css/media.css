@@ -177,6 +177,7 @@
         padding: 5px 15px;
         line-height: 1;
     }
+    
     .item h3{
         font-size: 11px;
     }
@@ -313,6 +314,10 @@
     .titulo-container-item h2{
         font-size: 18px;
     }
+    .icon-close{
+      width: 18px;
+      height: 18px;
+    }
     .notification {
         font-size: 12px;
         padding: 6px 12px;
@@ -326,7 +331,7 @@
         font-size: 14px;
       }
       .selected-item{
-        width: 50%;
+        width: 90%;
         margin: auto;
       }
  }
