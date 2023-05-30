@@ -934,24 +934,24 @@ header{
         font-size: 15px;
     }
     .container-cart-products{
-        right: -50px;
-        width: 400px;
+        right: -48px;
+        width: 420px;
     }
     .cantidad-carrito{
       width: 80px;
       display: inline-block;
     }
     .restar-cantidad,.sumar-cantidad {
-        font-size: 15px;
+        font-size: 18px;
         cursor: pointer;
     }
-    .cantidad-producto-carrito{
-        font-weight: 550;
-        font-size: 15px;
-        padding-right: 5px;
-    }
+  
     .titulo-producto-carrito{
-      font-size: 15px;
+      font-size: 12px;
+      text-align: center ;
+    }
+    .precio-producto-carrito{
+      font-size: 14px;
     }
     .info-producto{
         padding: 5px 15px;
