@@ -421,31 +421,7 @@ header{
     max-width: 32%;
 }
 
-.clasificaciones{
-    float: left;
-    max-width: 15%;
-    margin: 10px 0 0 5px;
-    font-size: 13px;
-    border: 1px solid lightgray;
-    border-radius: 10px;
-    display: none;
-}
 
-.clasificaciones a{
-    /*background-color:skyblue;
-    border-radius: 10px 0 10px 0; lado superior izquierdo,lado superior derecho,lado inferior derecho,lado inferior izquierdo
-    padding: 10px;*/
-    display:block;/* para dejen de ser elementos lineales y sean bloques, asi no se juntan*/
-    text-decoration: none;
-    margin: 15px 10px;
-    color: lightslategray;
-    border-bottom: 1px solid lightgray;
-    padding: 20px;
-}
-
-.clasificaciones a:hover{
-    background-color:rgb(180, 230, 250);
-}
 .ct-item-active{
     font-weight: bold;
 }
