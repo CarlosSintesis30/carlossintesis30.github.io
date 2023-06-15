@@ -40,6 +40,7 @@
           while ($row = $result->fetch_assoc()) {
             echo '<option value="' . $row['idDepartamento'] . '">' . $row['nombre_departamento'] . '</option>';
           }
+          
         }
 
         $conn->close();
