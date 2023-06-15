@@ -1,0 +1,57 @@
+/* Estilos modernos y atractivos para el item */
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.item:hover {
+    background-color: #e0e0e0;
+}
+
+.img-item {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.info-producto {
+    margin-top: 10px;
+    text-align: center;
+}
+
+h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.price {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+info-producto button{
+    background-color: #ff7f00;
+    color: #fff;
+    padding: 25px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-add-cart:hover {
+    background-color: #ff6600;
+}
+.titulo-detalles-item{
+    width: 70%;
+    margin: auto;
+}

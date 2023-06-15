@@ -22,13 +22,17 @@ h1 {
   font-size: 24px;
   color: #333;
 }
-
-form {
+.payment-form{
+  width: 40%;
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 label {
@@ -74,6 +78,9 @@ button{
   font-size: 16px;
   margin-top: 20px;
   cursor: pointer;
+}
+button:hover{
+  background-color: #10c016;
 }
 
 .product-item {
@@ -131,6 +138,24 @@ button{
   font-weight: bold;
   color: #ff5e00;
 }
+ /* ------------------procesar_formulario-php---------------------- */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 32px;
+  color: #333;
+}
+
+p {
+  font-size: 18px;
+  color: #666;
+}
+
 
 /* Estilos para dispositivos móviles */
 @media screen and (max-width: 768px) {
@@ -143,6 +168,9 @@ button{
     font-size: 24px;
     color: #333;
   }
+  .payment-form{
+    width: 100%;
+  }
 
   form {
     display: flex;
@@ -150,6 +178,7 @@ button{
     align-items: center;
     margin-top: 20px;
     width: 95%;
+  
   }
 
   label {
@@ -202,6 +231,7 @@ button{
     align-items: center;
     margin-bottom: 20px;
     border-bottom: 1px solid lightgray;
+    text-align: center;
   }
 
   .product-item img {
@@ -217,6 +247,7 @@ button{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    width: 40%;
   }
 
   .product-item span:nth-child(2) {
@@ -254,5 +285,8 @@ button{
     font-size: 1.5rem;
     font-weight: bold;
     color: #ff5e00;
+  }
+  #product-list{
+    width: 100%;
   }
 }

@@ -11,100 +11,6 @@ body{
     color: #333;
 }
 
-.menu{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #1A202C;
-    color:#fff;
-    height: 50px;
-}
-
-nav ul{
-    list-style: none;
-}
-
-.menu-container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 95%;
-    margin: auto;
-}
-
-.menu_links{
-    height: 100%;
-    transition: transform .5s;
-    display: flex;/*los elementos se ponen uno al lado del otro*/
-}
-
-.menu_item{
-    color:white;
-    text-decoration: none;
-    list-style: none;
-    position: relative;
-    height: 100%;
-    --clip: polygon(0 0,100% 0, 100% 0,0 0); /*animacion personalizada*/
-    --transform:rotate(-90deg) ;
-}
-
-.menu_item:hover{
-    --clip: polygon(0 0,100% 0, 100& 100%,0 100%);/*abre el menu cuando pasa el mouse*/
-    --transform:rotate(0) ;
-}
-
-.menu_nesting{
-    list-style: none;
-    transition:clip-path .3s;
-    clip-path: var(--clip);
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: max-content;
-    transform: translateY(100%);
-    background-color: #000;
-    z-index: 999;
-}
-
-.menu_link{
-    color:white;
-    text-decoration: none;
-    padding: 12.5px 20px;
-    display: flex;
-    height: 100%;
-    align-items: center;
-}
-.menu_link:hover{
-    background-color:#556485 ;
-}
-.menu_arrow{
-    transform:var(--transform) ;
-    transition: transform .3s;
-    display: block;
-    margin-left: 3px;
-}
-
-.menu_link---inside{
-    padding: 20px 20px 20px 20px;
-}
-
-.menu_link--inside:hover{
-    background-color: #798499;
-}
-
-.menu_hamburguer{
-    height: 100%;
-    display: flex;
-    align-items: center;
-    padding:  0 15px;
-    cursor: pointer;
-    display: none;
-}
-
-.menu_img{
-    display: block;
-    width: 36px;
-}
 
 /*despues de la barra de navegacion*/
 .icon-cart{
@@ -159,7 +65,7 @@ header{
     top: 50px;
     right: 0;
     background-color: #fff;
-    width: 500px;
+    width: 700px;
     z-index: 1;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
     border-radius: 10px; 
@@ -182,35 +88,49 @@ header{
     margin: 2px;
     width: auto;
     height: auto;
-    max-width: 80px;
+    max-width: 20%;
 }
 
 .titulo-producto-carrito{
+    width: 25%;
+    height: 78%;
     font-size: 18px;
-    text-align: center;
-    margin: 0 5px;
-    border-right: 1px solid lightgray;
-    padding-right: 5px;
+    font-weight: 400;
+    text-align: center ;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    max-height: 3.6em; /* Ajusta el valor según el tamaño del título */
 }
-
+.titulo-producto-carrito:hover{
+    text-decoration: underline;
+}
 .precio-producto-carrito{
     font-weight: 700;
     font-size: 18px;
 }
 .cantidad-carrito{
-  width: 80px;
+  width: 25%;
   display: inline-block;
   flex-direction: column;
   margin: 5px;
+ text-align: center;
 }
 .restar-cantidad,.sumar-cantidad {
-    font-size: 18px;
+    font-size: 22px;
     cursor: pointer;
+}
+.restar-cantidad:hover,.sumar-cantidad:hover{
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
 }
 .cantidad-producto-carrito{
     font-weight: 550;
-    font-size: 18px;
-    padding-right: 5px;
+    font-size: 22px;
 }
 
 .icon-close{
@@ -264,6 +184,7 @@ header{
     max-width: 100%;
 }
 
+
 .descripcion{
     line-height: 1.2;/*corrige el interlineado en la descripcion del producto*/
     font-size: 13px;
@@ -295,11 +216,19 @@ header{
     gap: 10px;
     text-align: justify;
 }
-.info-producto H3{
+.info-producto h3{
     font-size:14px;
-    
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    max-height: 3.6em; /* Ajusta el valor según el tamaño del título */
 }
-
+.info-producto h3:hover{
+    text-decoration:overline;
+}
 .price{
     font-size: 16px;
     font-weight: 900

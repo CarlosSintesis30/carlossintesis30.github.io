@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Digital City</title>
+		<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'> <!-- fuente de letra Lato-->
+		<link rel="stylesheet" href="./estilo.css"/>
+		<link rel="stylesheet" href="css/footer.css">
+		<link rel="stylesheet" href="css/media.css">
+		<link rel="stylesheet" href="./css/menu.css">
+		<link rel="stylesheet" href="css/animate.css-main/animate.min.css">
+		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+		<link rel="stylesheet" href="css/detallesitem.css">
+	</head>
+	<body>
+
+		<nav class="menu">
+			
+			<!-- <section class="menu-destok">
+				<div class="contacto">
+					<ul class="contacto">
+						<li><i class='bx bx-phone' ></i><a href="">+503 2255-0000</a></li>
+						<li><i class='bx bx-envelope' ></i> <a href="mailto:carlos@ejemplo.com">carlos@ejemplo.com</a></li>
+						<li></li>
+					</ul>
+				</div>
+
+				<div class="redes-sociales">
+					<ul>
+						<li><a href="">Nosotros</a></li>
+						<li><a href=""><i class='bx bxl-facebook'></i></a></li>
+						<li><a href=""><i class='bx bxl-instagram'></a></i></li>
+						<li><a href=""><i class='bx bxl-tiktok' ></i></a></i></li>
+					</ul>
+				</div>
+			</section> -->
+			
+			<section class="menu-container">			
+				<h1 class="menu_logo">Digital City</h1>
+
+				<ul class="menu_links">
+
+					<li class="menu_item">
+						<a href="index.html" class="menu_link">Inicio</a>
+					</li>
+					
+					<li class="menu_item menu_item--show">
+							<a href="#" class="menu_link">About <img src="menu/iconos/arrow.svg" class="menu_arrow"></a>
+
+							<ul class="menu_nesting">
+								<li class="menu_inside">
+									<a href="#" class="menu_link menu_link---inside">About 1</a>
+								</li>
+								<li class="menu_inside">
+									<a href="#" class="menu_link menu_link---inside">About 2</a>
+								</li>
+								<li class="menu_inside">
+									<a href="#" class="menu_link menu_link---inside">About 3</a>
+								</li>
+							</ul>
+					</li>
+
+						<li class="menu_item menu_item--show">
+							<a href="#" class="menu_link">Contac</a>
+						</li>
+				</ul>
+
+				<!--
+					<a href="#"><img src="../prueba/Imgenes/correo-electronico.png" class="redes-sociales" alt="correo-electronico"/></a>
+					<a href="#"><img src="../prueba/Imgenes/facebook.png" class="redes-sociales" alt="facebook"/></a>
+					<a href="#"><img src="../prueba/Imgenes/instagram.png" class="redes-sociales" alt="instagram"/></a>
+					<a href="#"><img src="../prueba/Imgenes/whatsapp.png" class="redes-sociales" alt="WhatsApp"/></a>
+				-->
+
+				<div class="menu_hamburguer">
+					<img src="menu/iconos/menu.svg" alt="menu" class="menu_img">
+				</div>
+			</section>
+    </nav>
+
+		<header>
+			<!--
+			<div class="search-container">
+				<input type="text" id="search-input" placeholder="Buscar...">
+				<button id="search-button"><i class="bx bx-search"></i></button>
+				<ul id="search-results"></ul>
+			  </div>  -->
+			  <h1></h1>
+			<div class="container-icon">
+				<div class="container-cart-icon">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke-width="1.5"
+						stroke="currentColor"
+						class="icon-cart"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+						/>
+					</svg>
+					<div class="count-products">
+						<span id="contador-productos">0</span>
+					</div>
+				</div>
+
+				<div class="container-cart-products hidden-cart">
+					<div class="row-product hidden">
+						<div class="cart-product">
+							<div class="info-cart-product">
+								<img class="product-image" src="Imgenes/laptop marca w.avif" alt="Imagen del producto">
+								<div class="cantidad-carrito">
+									<i class='bx bx-minus-circle restar-cantidad' ></i>
+									<span class="cantidad-producto-carrito">1</span>
+									<i class='bx bx-plus-circle sumar-cantidad'></i>
+								</div>
+								<p class="titulo-producto-carrito">Zapatos Nike</p>
+								<span class="precio-producto-carrito">$80</span>
+							</div>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke="currentColor"
+								class="icon-close"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M6 18L18 6M6 6l12 12"
+								/>
+							</svg>
+						</div>
+					</div>
+
+					<div class="cart-total hidden">
+						<h3>Total:</h3>
+						<span class="total-pagar">$200</span>
+						
+						
+					</div>
+					<p class="cart-empty">El carrito está vacío</p>
+					<div class="btn-pagar">
+						<a href="pago.html"> <button>PAGAR</button></a>
+					</div>
+				</div>
+			</div>
+		</header>
+		    <div id="notification" class="notification">Producto agregado al carrito</div>
+			<div id="titulo-detalles-item" class="titulo-detalles-item"></div>
+		    <div class="container-items" id="item-details">
+            <!-- Aquí se mostrará la información del artículo -->
+            </div>
+            <script src="detallesitem.js"></script>
+            <script src="index.js"></script>
+            <script src="buscador.js"></script>
+            <script src="filtrocategoria.js"></script>
+			<script src="filtrocategoria.js"></script>
+			<script src="./menu.js"></script>
+	</body>
+
+	<footer class="footer">
+		<div class="footer-content">
+		  <div class="footer-section">
+			<h3 class="footer-title">Servicios</h3>
+			<ul class="footer-links">
+			  <li><a href="#">Reparación de computadoras</a></li>
+			  <li><a href="#">Reparación de impresoras</a></li>
+			  <li><a href="#">Soporte al cliente</a></li>
+			</ul>
+		  </div>
+		  <div class="footer-section">
+			<h3 class="footer-title">Métodos de Pago</h3>
+			<ul class="footer-links">
+			  <li><a href="#">Tarjeta de crédito</a></li>
+			  <li><a href="#">Transferencia bancaria</a></li>
+			  <li><a href="#">PayPal</a></li>
+			</ul>
+		  </div>
+		  <div class="footer-section">
+			<h3 class="footer-title">Suscripción por Correo</h3>
+			<p class="footer-description">Recibe las últimas ofertas y novedades en tu correo electrónico.</p>
+			<form class="footer-form">
+			  <input type="email" placeholder="Ingresa tu correo electrónico" required>
+			  <button type="submit">Suscribirse</button>
+			</form>
+		  </div>
+		  <div class="footer-section">
+			<h3 class="footer-title">Ubicación</h3>
+			<p class="footer-description">Digital City</p>
+			<p class="footer-description">123 Calle Principal</p>
+			<p class="footer-description">Ciudad, País</p>
+		  </div>
+		</div>
+		<div class="footer-bottom">
+		  <p class="footer-text">© 2023 Digital City. Todos los derechos reservados. Atentamente Las monas Chinas</p>
+		  <div class="footer-social-icons">
+			<a href="#"><i class="bx bxl-facebook"></i></a>
+			<a href="#"><i class="bx bxl-twitter"></i></a>
+			<a href="#"><i class="bx bxl-instagram"></i></a>
+			<a href="#"><i class="bx bxl-youtube"></i></a>
+		  </div>
+		</div>
+	  </footer>
+</html>	  

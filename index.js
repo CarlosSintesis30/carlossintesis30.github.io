@@ -1,61 +1,3 @@
-/*bbara de navegacion*/
-(
-  function(){
-      const listElements=document.querySelectorAll('.menu_item--show');/*obtiene todos los elementos, menu desplegable*/
-      const list=document.querySelector('.menu_links'); /*obtiene un elemento , menu links*/
-      const menu=document.querySelector('.menu_hamburguer');/*obtiene un elemento, menu hamburguer*/
-
-      const addClick=()=>{
-          listElements.forEach(element =>{
-              element.addEventListener('click', ()=>{
-                  let submenu=element.children[1];/*obtiene el elemento hijo posicion 1, que es menu_nesting*/
-                  let height=0;
-                  element.classList.toggle('menu_item_--active'); /*anula el evento de un menu*/
-
-                  if(submenu.clientHeight===0){/*clientHeight, obtiene la altura, si la altura submenu es cero en la condicional*/
-                      height=submenu.scrollHeight;/*varable , tenga la altura minima , para que exista*/
-                  }
-
-                  submenu.style.height=`${height}px`; /*se agrega la altura obtenida*/
-              })
-          })
-      }
-
-      const deleteStyleHeight=()=>{
-          listElements.forEach(element=>{
-              if(element.children[1].getAtribute('style')){
-                  element.children[1].removeAtribute('style');/*si tiene el atributo style , que lo elimine*/
-                  element.classList.remove('menu_item--active');
-              }
-          })
-      }
-     /* addClick();*/
-
-      window.addEventListener('resize', ()=>{ /*si el ancho de la ventana supera los 800px*/
-          if(window.innerWidth > 1023){
-              deleteStyleHeight();
-              if(list.contains('menu_links--show')){ /* si contiene es clase , que la remueva*/
-                  list.classList.remove('menu_links--show');
-              }
-          }
-          else{
-              addClick();
-          }
-      });
-
-      if(window.innerWidth <=1023){ /*para evitar errores al hacer mas grande*/
-          addClick();
-      }
-
-      menu.addEventListener('click',()=> list.classList.toggle('menu_links--show')); /*quita la clase menu liks show*/
-  }
-)();
-
-
-/*despues de la barra de navegacion*/
-
-
-
 
 const btnCart = document.querySelector('.container-cart-icon');
 const containerCartProducts = document.querySelector('.container-cart-products');
@@ -79,6 +21,8 @@ const countProducts = document.querySelector('#contador-productos');
 
 const cartEmpty = document.querySelector('.cart-empty');
 const cartTotal = document.querySelector('.cart-total');
+
+
 
 const loadLocalStorage = () => {
   if (localStorage.getItem('allProducts')) {
@@ -125,7 +69,8 @@ for (let i = 0; i < productsList.length; i++) {
       } else {
         allProducts.push(infoProduct);
       }
-
+      
+      
       saveLocalStorage();
       showHTML();
     }
@@ -187,6 +132,14 @@ const updatePayButtonVisibility = () => {
   }
 };
 
+//funcion para truncar texto
+function truncateText(text, maxLength) {
+  if (text.length > maxLength) {
+    return text.slice(0, maxLength) + '...';
+  }
+  return text;
+}
+
 // Función para mostrar HTML
 const showHTML = () => {
   if (!allProducts.length) {
@@ -239,12 +192,17 @@ const showHTML = () => {
     total = total + parseFloat(product.quantity * product.price.slice(1));
     totalOfProducts = totalOfProducts + product.quantity;
   });
-
+  
+  // Truncar el texto en el elemento con la clase "titulo-producto-carrito"
+  const tituloProducto = document.querySelector('.titulo-producto-carrito');
   valorTotal.innerText = `$${total}`;
   countProducts.innerText = totalOfProducts;
 
   updatePayButtonVisibility();
 };
+
+
+
 
 loadLocalStorage();
 

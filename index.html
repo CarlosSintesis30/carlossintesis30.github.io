@@ -10,8 +10,9 @@
 		<title>Digital City</title>
 		<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'> <!-- fuente de letra Lato-->
 		<link rel="stylesheet" href="./estilo.css"/>
-		<link rel="stylesheet" href="css/footer.css">
+		<link rel="stylesheet" href="./menu/menu.css">
 		<link rel="stylesheet" href="css/media.css">
+		<link rel="stylesheet" href="css/footer.css">
 		<link rel="stylesheet" href="css/animate.css-main/animate.min.css">
 		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 	</head>
@@ -46,9 +47,9 @@
 					<li class="menu_item">
 						<a href="" class="menu_link">Inicio</a>
 					</li>
-					
+
 					<li class="menu_item menu_item--show">
-						<a href="#" class="menu_link">Categorias<img src="menu/iconos/arrow.svg" class="menu_arrow"></a>
+						<a href="#" class="menu_link">Categorias <img src="menu/iconos/arrow.svg" class="menu_arrow"></a>
 
 						<ul class="menu_nesting">
 							<li class="menu_inside">
@@ -58,10 +59,10 @@
 								<a href="#" class="menu_link menu_link---inside category-item " category="laptops">Laptops</a>
 							</li>
 							<li class="menu_inside">
-								<a href="#" class="menu_link menu_link---inside category-item">Teclados</a>
+								<a href="#" class="menu_link menu_link---inside category-item" category="smartwatch">Smart Wacht</a>
 							</li>
 						</ul>
-					<li/>
+				</li>
 					
 					<li class="menu_item menu_item--show">
 							<a href="#" class="menu_link">About <img src="menu/iconos/arrow.svg" class="menu_arrow"></a>
@@ -104,7 +105,7 @@
 				<input type="text" id="search-input" placeholder="Buscar...">
 				<button id="search-button"><i class="bx bx-search"></i></button>
 				<ul id="search-results"></ul>
-			  </div>
+			</div>
 			  
 
 			<div class="container-icon">
@@ -134,7 +135,6 @@
 							<div class="info-cart-product">
 								<img class="product-image" src="Imgenes/laptop marca w.avif" alt="Imagen del producto">
 								<div class="cantidad-carrito">
-									<i class='bx bx-minus-circle restar-cantidad' ></i>
 									<span class="cantidad-producto-carrito">1</span>
 									<i class='bx bx-plus-circle sumar-cantidad'></i>
 								</div>
@@ -166,7 +166,7 @@
 					</div>
 					<p class="cart-empty">El carrito está vacío</p>
 					<div class="btn-pagar">
-						<a href="pago.html"> <button>PAGAR</button></a>
+						<a href="pago.php"> <button>PAGAR</button></a>
 					</div>
 				</div>
 			</div>
@@ -209,7 +209,7 @@
 								<img class="img-item" src="Imgenes/laptop marca w.avif" alt="latop gamer"/>
 							</figure>
 							<div class="info-producto">
-								<h3 class="nombre-item">LAPTOP MARCA W</h3>
+								<h3 title="LAPTOP MARCA W">LAPTOP MARCA W</h3>
 								<h4 class="price">$895</h4>
 								<button class="btn-add-cart">Anadir al carrito</button>
 							</div>
@@ -252,53 +252,20 @@
 							<hr/>
 						</div>
 
-							<div class="item temp" category="inicio"  id="5">
-								<figure>
-									<img class="img-item" src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="latop gamer"/>
-								</figure>
-								<div class="info-producto">
-									<h3>SMARTPHONE MARCA W</h3>
-									<h4 class="price">$895</h4>
-									<button class="btn-add-cart">Anadir al carrito</button>
-								</div>
-								<hr/>
+						<div class="item temp " category="inicio"  id="4">
+							<figure>
+								<img class="img-item" src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80" alt="laptop gamer"/>
+							</figure>
+							<div class="info-producto">
+								<h3>LAPTOP MARCA Z</h3>
+								<h4 class="price">$1999</h4>
+								<button class="btn-add-cart">Anadir al carrito</button>
 							</div>
-					
-							<div class="item temp" category="inicio"  id="6">
-								<figure>
-									<img class="img-item" src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="laptop gamer"/>
-								</figure>
-								<div class="info-producto">
-									<h3>SMARTPHONE MARCA X</h3>
-									<h4 class="price">$1050</h4>
-									<button class="btn-add-cart">Anadir al carrito</button>
-								</div>
-								<hr/>
-							</div>
-					
-							<div class="item temp" category="inicio"  id="7">
-								<figure>
-									<img class="img-item" src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="laptop gamer"/>
-								</figure>
-								<div class="info-producto">
-									<h3>SMARTPHONE MARCA Y</h3>
-									<h4 class="price">$1423.95</h4>
-									<button class="btn-add-cart">Anadir al carrito</button>
-								</div>
-								<hr/>
-							</div>
-					
-							<div class="item temp" category="inicio"  id="8">
-								<figure>
-									<img class="img-item" src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="laptop gamer"/>
-								</figure>
-								<div class="info-producto">
-									<h3>SMARTPHONE MARCA Z</h3>
-									<h4 class="price">$1999</h4>
-									<button class="btn-add-cart">Anadir al carrito</button>
-								</div>
-								<hr/>
-							</div>
+							<hr/>
+						</div>
+
+						
+							<!-- termina caja  -->
 					</div>
 					
 					<div class="temp titulo-container-item" category="inicio"  id="9">
@@ -404,9 +371,15 @@
 								</div>
 								<hr/>
 							</div>
+
+							
+							<!-- -------------Termina caja contenedor itmes -->
 					</div>
 
-
+					
+						<!-- ***********************************************************************************************
+					************************************************SMART WACTH*******************************************
+				********************************************************************************************************** -->
 					<div class="container-items" id="item-container">
 
 						<!--****************************************************
@@ -414,7 +387,7 @@
 						******************************************************-->
 						<div class="item temp ocultar" category="laptops" id="1">
 							<figure>
-								<img class="img-item" src=https://images.unsplash.com/photo-1640955014216-75201056c829?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80 alt="latop gamer"/>
+								<img class="img-item" src="https://images.unsplash.com/photo-1640955014216-75201056c829?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80" alt="latop gamer"/>
 							</figure>
 							<div class="info-producto">
 								<h3>LAPTOP MARCA W</h3>
@@ -611,15 +584,164 @@
 							</div>
 							<hr/>
 						</div>
-					</div>
+
 					</div>
 
+					<di class="container-items">
+						<div class="item temp ocultar" category="smartwatch" id="17">
+							<figure>
+								<img class="img-item" src="https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=588&q=80" alt="latop gamer"/>
+							</figure>
+							<div class="info-producto">
+								<h3>SMART WACHT MARCA W</h3>
+								<h4 class="price">$95</h4>
+								<button class="btn-add-cart">Anadir al carrito</button>
+							</div>
+							<hr/>
+					</div>
+					
+					<div class="item temp ocultar" category="smartwatch" id="18">
+							<figure>
+								<img class="img-item" src="https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=588&q=80" alt="laptop gamer"/>
+							</figure>
+							<div class="info-producto">
+								<h3>SMART WACHT MARCA X</h3>
+								<h4 class="price">$80.99</h4>
+								<button class="btn-add-cart">Anadir al carrito</button>
+							</div>
+							<hr/>
+					</div>
+					
+					<div class="item temp ocultar" category="smartwatch" id="19">
+							<figure>
+								<img class="img-item" src="https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=588&q=80" alt="laptop gamer"/>
+							</figure>
+							<div class="info-producto">
+								<h3>SMART WACHT MARCA Y</h3>
+								<h4 class="price">$60.99</h4>
+								<button class="btn-add-cart">Anadir al carrito</button>
+							</div>
+							<hr/>
+					</div>
+					
+					<div class="item temp ocultar" category="smartwatch" id="20">
+							<figure>
+								<img class="img-item" src="https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=588&q=80" alt="laptop gamer"/>
+							</figure>
+							<div class="info-producto">
+								<h3>SMART WACHT MARCA Z</h3>
+								<h4 class="price">$100</h4>
+								<button class="btn-add-cart">Anadir al carrito</button>
+							</div>
+							<hr/>
+					</div>
+					
+					<div class="item temp ocultar" category="smartwatch" id="21">
+							<figure>
+								<img class="img-item" src="https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=588&q=80" alt="latop gamer"/>
+							</figure>
+							<div class="info-producto">
+								<h3>SMART WACHT MARCA A</h3>
+								<h4 class="price">$95</h4>
+								<button class="btn-add-cart">Anadir al carrito</button>
+							</div>
+							<hr/>
+					</div>
+					
+					<div class="item temp ocultar" category="smartwatch" id="22">
+							<figure>
+								<img class="img-item" src="https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=588&q=80" alt="laptop gamer"/>
+							</figure>
+							<div class="info-producto">
+								<h3>SMART WACHT MARCA B</h3>
+								<h4 class="price">$50</h4>
+								<button class="btn-add-cart">Anadir al carrito</button>
+							</div>
+							<hr/>
+					</div>
+					
+					<div class="item temp ocultar" category="smartwatch" id="23">
+							<figure>
+								<img class="img-item" src="https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=588&q=80" alt="laptop gamer"/>
+							</figure>
+							<div class="info-producto">
+								<h3>SMART WACHT MARCA C</h3>
+								<h4 class="price">$23.95</h4>
+								<button class="btn-add-cart">Anadir al carrito</button>
+							</div>
+							<hr/>
+					</div>
+					
+					<div class="item temp ocultar" category="smartwatch" id="24">
+							<figure>
+								<img class="img-item" src="https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=588&q=80" alt="laptop gamer"/>
+							</figure>
+							<div class="info-producto">
+								<h3>SMART WACHT MARCA D</h3>
+								<h4 class="price">$99</h4>
+								<button class="btn-add-cart">Anadir al carrito</button>
+							</div>
+							<hr/>
+					</div>
+					
+					<div class="item temp ocultar" category="smartwatch" id="25">
+							<figure>
+								<img class="img-item" src="https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=588&q=80" alt="latop gamer"/>
+							</figure>
+							<div class="info-producto">
+								<h3>SMART WACHT MARCA E</h3>
+								<h4 class="price">$97</h4>
+								<button class="btn-add-cart">Anadir al carrito</button>
+							</div>
+							<hr/>
+					</div>
+					
+					<div class="item temp ocultar" category="smartwatch" id="26">
+							<figure>
+								<img class="img-item" src="https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=588&q=80" alt="laptop gamer"/>
+							</figure>
+							<div class="info-producto">
+								<h3>SMART WACHT MARCA F</h3>
+								<h4 class="price">$50</h4>
+								<button class="btn-add-cart">Anadir al carrito</button>
+							</div>
+							<hr/>
+					</div>
+					
+					<div class="item temp ocultar" category="smartwatch" id="27">
+							<figure>
+								<img class="img-item" src="https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=588&q=80" alt="laptop gamer"/>
+							</figure>
+							<div class="info-producto">
+								<h3>SMART WACHT MARCA G</h3>
+								<h4 class="price">$23.95</h4>
+								<button class="btn-add-cart">Anadir al carrito</button>
+							</div>
+							<hr/>
+					</div>
+					
+					<div class="item temp ocultar" category="smartwatch" id="28">
+							<figure>
+								<img class="img-item" src="https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=588&q=80" alt="laptop gamer"/>
+							</figure>
+							<div class="info-producto">
+								<h3>SMART WACHT MARCA H</h3>
+								<h4 class="price">$99</h4>
+								<button class="btn-add-cart">Anadir al carrito</button>
+							</div>
+							<hr/>
+					</div>
+					</di>
+				
+
+		
 				</section>
 	</body>
 	<script src="./filtrocategoria.js"></script>
 	<script src="./index.js"></script>
 	<script src="./buscador.js"></script>
-
+	<script src="./detallesitem.js"></script>
+	<script src="./menu.js"></script>
 	<footer class="footer">
 		<div class="footer-content">
 		  <div class="footer-section">

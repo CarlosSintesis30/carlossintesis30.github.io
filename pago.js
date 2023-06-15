@@ -1,74 +1,64 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const productList = document.getElementById('product-list');
-    const payButton = document.getElementById('pay-button');
-    const departmentSelect = document.getElementById('department');
-    const municipalitySelect = document.getElementById('municipality');
-    const idInput = document.getElementById('id');
+  const productList = document.getElementById('product-list');
+  const payButton = document.getElementById('pay-button');
 
-    idInput.addEventListener('input', () => {
-      const maxLength = 9;
-      if (idInput.value.length > maxLength) {
-        idInput.value = idInput.value.slice(0, maxLength);
-      }
-    });
-    
-    // Obtener lista de productos del Local Storage
-    const allProducts = JSON.parse(localStorage.getItem('allProducts'));
-    // Mostrar la lista de productos en el carrito
-    if (allProducts && allProducts.length > 0) {
-      allProducts.forEach(product => {
-        console.log(allProducts)
-        const listItem = document.createElement('li');
-        listItem.innerHTML = `
-        <div class="product-item">
-            <img src="${product.image}" alt="Product Image">
-            <span>Cantidad: ${product.quantity}</span>
-            <span>Nombre: ${product.title}</span>
-            <span>Precio: ${product.price}</span>
-        </div>
-        `;
-        productList.appendChild(listItem);
-      });
-                // Calcular el total a pagar
-          const totalPagar = allProducts.reduce((total, product) => {
-            return total + (product.price.slice(1) * product.quantity);
-          }, 0);
+  const idInput = document.getElementById('id');
 
-          // Mostrar el total en el HTML
-          const totalPagarSpan = document.querySelector('.total_pagar');
-          totalPagarSpan.textContent = `$${totalPagar}`;
- 
+  idInput.addEventListener('input', () => {
+    const maxLength = 9;
+    if (idInput.value.length > maxLength) {
+      idInput.value = idInput.value.slice(0, maxLength);
     }
-
-    // Actualizar la lista de municipios según el departamento seleccionado
-    departmentSelect.addEventListener('change', function() {
-      const selectedDepartment = departmentSelect.value;
-      municipalitySelect.innerHTML = '';
-  
-      if (selectedDepartment === 'sonsonate') {
-        addOptionToSelect('izalco', 'Izalco');
-        addOptionToSelect('armenia', 'Armenia');
-      } else if (selectedDepartment === 'santaana') {
-        addOptionToSelect('santaana', 'Santa Ana');
-        addOptionToSelect('rosale', 'Rosale');
-      } else if (selectedDepartment === 'ahuachapan') {
-        addOptionToSelect('armenia2', 'Armenia');
-        addOptionToSelect('armenia3', 'Armenia2');
-      }
-    });
-  
-    // Función auxiliar para agregar opciones a un elemento select
-    function addOptionToSelect(value, label) {
-      const option = document.createElement('option');
-      option.value = value;
-      option.textContent = label;
-      municipalitySelect.appendChild(option);
-    }
-  
-    // Realizar pago (enviar el formulario)
-    payButton.addEventListener('click', function() {
-      const form = document.getElementById('payment-form');
-      form.submit();
-    });
   });
   
+  // Obtener lista de productos del Local Storage
+  const allProducts = JSON.parse(localStorage.getItem('allProducts'));
+  // Mostrar la lista de productos en el carrito
+  if (allProducts && allProducts.length > 0) {
+    allProducts.forEach(product => {
+      const listItem = document.createElement('li');
+      listItem.innerHTML = `
+      <div class="product-item">
+          <img src="${product.image}" alt="Product Image">
+          <span>cantidad: ${product.quantity}</span>
+          <span> ${product.title}</span>
+          <span> ${product.price}</span>
+      </div>
+      `;
+      productList.appendChild(listItem);
+    });
+              // Calcular el total a pagar
+        const totalPagar = allProducts.reduce((total, product) => {
+          return total + (product.price.slice(1) * product.quantity);
+        }, 0);
+
+        // Mostrar el total en el HTML
+        const totalPagarSpan = document.querySelector('.total_pagar');
+        totalPagarSpan.textContent = `$${totalPagar}`;
+
+  }
+
+  /* ------------------------------------------------------------------------ */
+  /* document.getElementById('payment-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evitar que se envíe el formulario de forma tradicional
+  
+    // Obtener lista de productos del Local Storage
+    const allProducts = JSON.parse(localStorage.getItem('allProducts'));
+  
+    // Realizar una solicitud AJAX a tu archivo PHP
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState === 4 && this.status === 200) {
+        // Aquí puedes realizar cualquier acción adicional después de enviar los datos a PHP
+        console.log('Datos enviados a PHP');
+        // Continuar con el envío del formulario de forma tradicional
+        document.getElementById('payment-form').submit();
+      }
+    };
+    xhttp.open('POST', './php/procesar_formulario.php', true);
+    xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhttp.send('allProducts=' + JSON.stringify(allProducts));
+  }); */
+  
+  
+});
